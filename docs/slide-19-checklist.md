@@ -1,10 +1,10 @@
 # Slide 19 · Your Agent Security Checklist
 
-Everything you need to deploy a trustworthy agent — with expanded guidance for each item.
+Everything you need to deploy a trustworthy agent - with expanded guidance for each item.
 
 ![Agent Security Checklist hero image](assets/19-checklist.png){ .hero-image }
 
-Every item on this checklist maps to something you can implement today. Most use features you may already have. The design and policy items — the ones without a "click here to enable" button — are the conversations to start now, before the agent is in production.
+Every item on this checklist maps to something you can implement today. Most use features you may already have. The design and policy items - the ones without a "click here to enable" button - are the conversations to start now, before the agent is in production.
 
 ---
 
@@ -18,7 +18,7 @@ Run STRIDE analysis on your agent's architecture before building. Input the agen
 
 ### ☐ Defined what data it can and cannot access
 
-Write this down explicitly. List every data source. Classify its sensitivity. Document whether the agent has read access, write access, or both — and the justification for each level. If you cannot justify write access to a data source, the agent should not have it.
+Write this down explicitly. List every data source. Classify its sensitivity. Document whether the agent has read access, write access, or both - and the justification for each level. If you cannot justify write access to a data source, the agent should not have it.
 
 **Common mistake to avoid:** Giving an agent access to all documents in a shared drive when it only needs access to a specific folder. The access boundary should be as tight as the task requires.
 
@@ -26,7 +26,7 @@ Write this down explicitly. List every data source. Classify its sensitivity. Do
 
 For every consequential, irreversible, or high-impact action the agent might take, document whether it requires human approval. Irreversible means: if this action is wrong, what does remediation cost? Merge to production: human approval. Send external communication: human approval. Delete a resource: human approval.
 
-These gates must be **technically enforced** — not stated in a document and trusted to hold. If the document says "requires human approval" but nothing prevents the agent from taking the action autonomously, the gate does not exist.
+These gates must be **technically enforced** - not stated in a document and trusted to hold. If the document says "requires human approval" but nothing prevents the agent from taking the action autonomously, the gate does not exist.
 
 ---
 
@@ -56,19 +56,19 @@ If the agent authenticates to external services, use OIDC or equivalent short-li
 
 ### ☐ Code scanning enabled on all agent-opened PRs
 
-GitHub Advanced Security code scanning should be a required status check on every PR — including those opened by agent identities. Configure the `github/codeql-analysis.yml` workflow to trigger on `pull_request` events and set it as a required status check in branch protection settings.
+GitHub Advanced Security code scanning should be a required status check on every PR - including those opened by agent identities. Configure the `github/codeql-analysis.yml` workflow to trigger on `pull_request` events and set it as a required status check in branch protection settings.
 
 **Verify:** Open a test PR from an agent identity. Confirm that the PR shows code scanning checks and that the merge button is disabled until the scan passes.
 
 ### ☐ Secret scanning with push protection enabled
 
-Enable secret scanning with **push protection** — this blocks pushes containing detected secrets at the `git push` step, before they reach the repository. This is categorically more effective than alerting after the fact, because it prevents the credential from ever landing in the codebase.
+Enable secret scanning with **push protection** - this blocks pushes containing detected secrets at the `git push` step, before they reach the repository. This is categorically more effective than alerting after the fact, because it prevents the credential from ever landing in the codebase.
 
-**Why this is critical for agents:** Agents generating code that interacts with external services will occasionally produce output containing credentials. It is not a question of whether — it is a question of when, and whether your controls are in place before it happens.
+**Why this is critical for agents:** Agents generating code that interacts with external services will occasionally produce output containing credentials. It is not a question of whether - it is a question of when, and whether your controls are in place before it happens.
 
 ### ☐ Required reviewer on agent-opened PRs
 
-Configure branch protection to require at least one human reviewer for all PRs. Explicitly verify that the **agent identity is excluded from the set of valid approvers** — agents cannot approve their own work. This is a GitHub branch protection setting, not a trust-based control.
+Configure branch protection to require at least one human reviewer for all PRs. Explicitly verify that the **agent identity is excluded from the set of valid approvers** - agents cannot approve their own work. This is a GitHub branch protection setting, not a trust-based control.
 
 **Test:** Have the agent identity open a PR and attempt to approve it as the same identity. Confirm this is rejected.
 
@@ -86,7 +86,7 @@ The frameworks, libraries, and MCP servers your agent depends on are a supply ch
 
 Before the agent executes an action based on model output, validate that the proposed action is within the expected scope. An agent that only summarises documents should never produce an action that calls an external API. Implement an action validator that checks proposed actions against an explicit allow-list before execution.
 
-**This is the architectural control** that makes your system resilient even if the model is successfully manipulated — because the validator runs regardless of how the model's output was produced.
+**This is the architectural control** that makes your system resilient even if the model is successfully manipulated - because the validator runs regardless of how the model's output was produced.
 
 ### ☐ Rate limiting and cost controls in place
 
@@ -98,7 +98,7 @@ Set limits at 3-5× expected normal usage to allow for complex tasks while bound
 
 Apply pre-LLM input scanning before user input reaches the model. This can be a dedicated service (Microsoft Prompt Shields, Azure AI Content Safety) or a lighter-weight pattern-matching layer that blocks known injection phrases.
 
-**Set expectations correctly:** Pre-LLM detection does not catch everything. It eliminates commodity attacks and raises the cost for sophisticated ones. It is one layer of a defence-in-depth system — not a complete solution.
+**Set expectations correctly:** Pre-LLM detection does not catch everything. It eliminates commodity attacks and raises the cost for sophisticated ones. It is one layer of a defence-in-depth system - not a complete solution.
 
 ---
 
@@ -106,7 +106,7 @@ Apply pre-LLM input scanning before user input reaches the model. This can be a 
 
 ### ☐ All agent actions logged with identity, time, and input context
 
-Every tool call, every retrieved document, every model decision — logged with the agent's identity, the timestamp, the input that triggered it, and the output it produced. This is your audit trail and your incident response foundation.
+Every tool call, every retrieved document, every model decision - logged with the agent's identity, the timestamp, the input that triggered it, and the output it produced. This is your audit trail and your incident response foundation.
 
 **Minimum viable logging schema:** `{timestamp, agent_identity, session_id, action_type, parameters, trigger_input, outcome}`. Every entry should be queryable.
 
@@ -128,13 +128,13 @@ Deploy automated behavioural tests for your agent's safety and security properti
 
 ### ☐ Agent policy document exists and is approved
 
-A written document covering: data access scope, required approval gates, log retention policies, accountability ownership, and explainability approach. Approved by security, legal, and privacy as applicable. Stored in a location accessible to incident responders — not just the team that built the agent.
+A written document covering: data access scope, required approval gates, log retention policies, accountability ownership, and explainability approach. Approved by security, legal, and privacy as applicable. Stored in a location accessible to incident responders - not just the team that built the agent.
 
 ### ☐ Incident response plan covers agent failures
 
-A written procedure for: detecting an agent taking an unintended action, containing it (how do you disable the agent quickly?), communicating to affected users, performing root cause analysis, and reporting as required. This plan should be tested — not just written — before it is needed.
+A written procedure for: detecting an agent taking an unintended action, containing it (how do you disable the agent quickly?), communicating to affected users, performing root cause analysis, and reporting as required. This plan should be tested - not just written - before it is needed.
 
-**The quick disable step is critical.** Know today exactly how you would stop your agent in the next five minutes if you needed to. Revoking a GitHub App installation, disabling a service account, stopping a workflow — whatever it is, know the steps before the incident.
+**The quick disable step is critical.** Know today exactly how you would stop your agent in the next five minutes if you needed to. Revoking a GitHub App installation, disabling a service account, stopping a workflow - whatever it is, know the steps before the incident.
 
 ### ☐ Data retention policy applied to agent logs
 
