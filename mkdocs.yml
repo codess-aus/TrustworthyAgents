@@ -1,0 +1,46 @@
+site_name: Building Trustworthy AI Agents
+site_description: Companion site for the Global AI Security Bootcamp talk
+site_url: https://codess-aus.github.io/TrustworthyAgents/
+repo_url: https://github.com/codess-aus/TrustworthyAgents
+repo_name: codess-aus/TrustworthyAgents
+
+theme:
+  name: material
+  language: en
+  font:
+    text: Atkinson Hyperlegible
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.top
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+
+nav:
+  - Home: index.md
+  - Chapter 1 · Hook + Context: chapter-1-hook-context.md
+  - Chapter 2 · What Is an AI Agent?: chapter-2-what-is-an-agent.md
+  - Chapter 3 · Threat Landscape: chapter-3-threat-landscape.md
+  - Chapter 4 · Trustworthy Agent Framework: chapter-4-trustworthy-framework.md
+  - Chapter 5 · Live Demo: chapter-5-live-demo.md
+  - Chapter 6 · Call to Action: chapter-6-call-to-action.md
