@@ -49,15 +49,15 @@ nav:
   - The Threat Landscape:
     - Slide 7 · The Threat Landscape: slide-07-threat-landscape.md
     - Slide 8 · OWASP Top Threats for Agents: slide-08-owasp-threats.md
-    - Slide 9 · Prompt Injection — Show Don't Tell: slide-09-prompt-injection.md
+    - Slide 9 · Prompt Injection - Show Don't Tell: slide-09-prompt-injection.md
     - Slide 10 · The Attack Surface Map: slide-10-attack-surface.md
   - Building Trustworthy Agents:
     - Slide 11 · Framework Overview: slide-11-framework-overview.md
-    - Slide 12 · Layer 1 — Secure Design: slide-12-secure-design.md
-    - Slide 13 · Layer 2 — Identity and Least Privilege: slide-13-identity-least-privilege.md
-    - Slide 14 · Layer 3 — Runtime Controls: slide-14-runtime-controls.md
-    - Slide 15 · Layer 4 — Observability: slide-15-observability.md
-    - Slide 16 · Layer 5 — Governance: slide-16-governance.md
+    - Slide 12 · Layer 1 - Secure Design: slide-12-secure-design.md
+    - Slide 13 · Layer 2 - Identity and Least Privilege: slide-13-identity-least-privilege.md
+    - Slide 14 · Layer 3 - Runtime Controls: slide-14-runtime-controls.md
+    - Slide 15 · Layer 4 - Observability: slide-15-observability.md
+    - Slide 16 · Layer 5 - Governance: slide-16-governance.md
   - Live Demo:
     - Slide 17 · Live Demo: slide-17-live-demo.md
   - Call to Action:
