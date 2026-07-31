@@ -1,5 +1,7 @@
 # Slide 18 · The Developer Is Your Ally
 
+![Developer ally hero image](assets/18-developer.png){ .hero-image }
+
 Security professionals and developers are not adversaries. They are solving the same problem from different angles, and the best security outcomes happen when they solve it together.
 
 ## The False Dichotomy
