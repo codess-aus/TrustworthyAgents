@@ -38,9 +38,29 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Chapter 1 · Hook + Context: chapter-1-hook-context.md
-  - Chapter 2 · What Is an AI Agent?: chapter-2-what-is-an-agent.md
-  - Chapter 3 · Threat Landscape: chapter-3-threat-landscape.md
-  - Chapter 4 · Trustworthy Agent Framework: chapter-4-trustworthy-framework.md
-  - Chapter 5 · Live Demo: chapter-5-live-demo.md
-  - Chapter 6 · Call to Action: chapter-6-call-to-action.md
+  - Hook + Context:
+    - Slide 1 · Title: slide-01-title.md
+    - Slide 2 · The Vibe Shift: slide-02-vibe-shift.md
+    - Slide 3 · What We're Covering: slide-03-agenda.md
+  - What Is an AI Agent?:
+    - Slide 4 · So What Is an AI Agent?: slide-04-what-is-an-agent.md
+    - Slide 5 · The Agent Spectrum: slide-05-agent-spectrum.md
+    - Slide 6 · Cloud-Native Agents in the SDLC: slide-06-cloud-native-sdlc.md
+  - The Threat Landscape:
+    - Slide 7 · The Threat Landscape: slide-07-threat-landscape.md
+    - Slide 8 · OWASP Top Threats for Agents: slide-08-owasp-threats.md
+    - Slide 9 · Prompt Injection — Show Don't Tell: slide-09-prompt-injection.md
+    - Slide 10 · The Attack Surface Map: slide-10-attack-surface.md
+  - Building Trustworthy Agents:
+    - Slide 11 · Framework Overview: slide-11-framework-overview.md
+    - Slide 12 · Layer 1 — Secure Design: slide-12-secure-design.md
+    - Slide 13 · Layer 2 — Identity and Least Privilege: slide-13-identity-least-privilege.md
+    - Slide 14 · Layer 3 — Runtime Controls: slide-14-runtime-controls.md
+    - Slide 15 · Layer 4 — Observability: slide-15-observability.md
+    - Slide 16 · Layer 5 — Governance: slide-16-governance.md
+  - Live Demo:
+    - Slide 17 · Live Demo: slide-17-live-demo.md
+  - Call to Action:
+    - Slide 18 · The Developer Is Your Ally: slide-18-developer-ally.md
+    - Slide 19 · Agent Security Checklist: slide-19-checklist.md
+    - Slide 20 · The Only Question That Matters: slide-20-closing.md
