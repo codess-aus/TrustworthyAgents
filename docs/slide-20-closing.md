@@ -91,6 +91,7 @@ The security profession is not catching up to AI agents. The security profession
 - **OWASP Top 10 for LLM Applications:** [owasp.org/www-project-top-10-for-large-language-model-applications](https://owasp.org/www-project-top-10-for-large-language-model-applications)
 - **GitHub Copilot Documentation:** [docs.github.com/copilot](https://docs.github.com/copilot)
 - **Microsoft Open Trust Stack:** [devblogs.microsoft.com/foundry/build-2026-open-trust-stack-ai-agents](https://devblogs.microsoft.com/foundry/build-2026-open-trust-stack-ai-agents)
+- **Agent Control Spec:** [ACS](https://microsoft.github.io/agent-governance-toolkit/packages/agent-control-specification/#trusted-by-partners)
 
 ---
 
