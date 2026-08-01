@@ -11,7 +11,7 @@ import re
 
 
 INJECTION_PATTERNS = [
-    r"ignore (all |previous |prior )?instructions",
+    r"ignore .*instructions",
     r"disregard (your |all )?rules",
     r"you are now",
     r"new (system |)prompt",
