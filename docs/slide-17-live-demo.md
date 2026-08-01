@@ -101,6 +101,14 @@ The demo setup:
 
 That is the complete security configuration for a supervised Level 2 agent deployment in GitHub. It takes approximately 30 minutes to set up the first time. The security value is substantial.
 
+## Presenter Runbook and Backup Demo
+
+If you are preparing this talk end-to-end, use the [Demo Runbook](demo-runbook.md) alongside this slide.
+
+- It turns the five Slide 17 beats into a step-by-step live flow.
+- It includes the environment checklist from `context.md`.
+- It points to the standalone backup script at `/home/runner/work/TrustworthyAgents/TrustworthyAgents/demo_agent_security.py`.
+
 <div class="chapter-nav" markdown>
 [← Back: Slide 16](slide-16-governance.md)
 [Next: Slide 18 →](slide-18-developer-ally.md)
